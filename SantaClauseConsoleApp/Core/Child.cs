@@ -34,7 +34,7 @@ namespace SantaClauseConsoleApp
 
         public double calculateAge()
         {
-            TimeSpan age = this.dateOfBirth.Subtract(DateTime.Now) ;
+            TimeSpan age = DateTime.Now.Subtract(this.dateOfBirth) ;
             return Math.Floor(age.TotalDays / 365);
         }
     }

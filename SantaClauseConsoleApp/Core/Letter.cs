@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace SantaClauseConsoleApp
 {
-    public partial class Letter
+    public  class Letter
     {
         public int ID;
         public static int globalId;
@@ -31,7 +31,7 @@ namespace SantaClauseConsoleApp
             {
                 line = line.Replace("[FULL_NAME]", this.sender.name);
                 line = line.Replace("[AGE]", this.sender.calculateAge().ToString());
-                line = line.Replace("[ADRESS]", this.sender.adress);
+                line = line.Replace("[ADDRESS]", this.sender.adress);
                 line = line.Replace("[BEHAVIOR]", this.sender.isGood.ToString());
 
                 if (line.Contains("[PRESENT1]"))
@@ -42,7 +42,7 @@ namespace SantaClauseConsoleApp
                         line += this.presents.ElementAt(i).name + " , ";
                     }
                 }
-                Console.WriteLine();
+                Console.WriteLine(line);
             }
             
             
@@ -59,9 +59,12 @@ namespace SantaClauseConsoleApp
             }
         }
         //hopefully if the first works this works as well
-        public void createFileLetter(String FileName) 
+        public void createFileLetter(String FileName)
         {
-            File.Create(FileName);
+            String FullLetter="";
+            
+            if(!File.Exists(FileName))
+                File.Create(FileName);
             StreamWriter writer = new StreamWriter(FileName);
             StreamReader reader = new StreamReader("letter-template.txt");
             string line;
@@ -80,10 +83,11 @@ namespace SantaClauseConsoleApp
                         line += this.presents.ElementAt(i).name + " , ";
                     }
                 }
-                writer.WriteLine(line);
+
+                FullLetter += line;
             }
-            
-            
+            reader.Close();
+            writer.WriteLine(FullLetter);
         }
     }
 }

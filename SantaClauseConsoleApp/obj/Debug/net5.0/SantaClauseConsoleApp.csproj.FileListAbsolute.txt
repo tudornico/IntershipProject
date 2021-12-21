@@ -14,3 +14,7 @@ C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsol
 C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\ref\SantaClauseConsoleApp.dll
 C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.pdb
 C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.genruntimeconfig.cache
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\letter-template.txt
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\Letter1.txt
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\Letter2.txt
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\Letter3.txt
