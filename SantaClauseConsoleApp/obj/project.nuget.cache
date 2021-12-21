@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "DLUXF6QTBrg4FGlzfDCD2SfnaoDRQXCZ5hOaYeqn3d33fthlYfGuHK2N6CN+JYgVcsZ5182B2Hx7DgGLZB47Wg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tudor\\RiderProjects\\WinterInternship2022-Backend-main\\SantaClauseConsoleApp\\SantaClauseConsoleApp\\SantaClauseConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tudor\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Tudor\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Tudor\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Tudor\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

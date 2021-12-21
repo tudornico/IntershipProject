@@ -1,0 +1,16 @@
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.AssemblyInfo.cs
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.exe
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.deps.json
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.runtimeconfig.json
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.runtimeconfig.dev.json
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.dll
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\ref\SantaClauseConsoleApp.dll
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\bin\Debug\net5.0\SantaClauseConsoleApp.pdb
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.dll
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\ref\SantaClauseConsoleApp.dll
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.pdb
+C:\Users\Tudor\RiderProjects\WinterInternship2022-Backend-main\SantaClauseConsoleApp\SantaClauseConsoleApp\obj\Debug\net5.0\SantaClauseConsoleApp.genruntimeconfig.cache
