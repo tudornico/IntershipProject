@@ -9,7 +9,7 @@ namespace SantaClauseConsoleApp
         public int id;
 
         public static int globalid;
-        //todo find the fields required for item such as presents ideas : price(maybe) location ,type of toy
+        
 
         public Item(string name)
         {

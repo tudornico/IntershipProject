@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace SantaClauseConsoleApp
 {
@@ -9,8 +10,8 @@ namespace SantaClauseConsoleApp
         static void Main(string[] args)
         {
             //Question1(); // works
-            Question2(); 
-            Question3();
+            //Question2(); // works
+            //Question3(); works
             Question4();
             Question5();
             Question6();
@@ -20,13 +21,13 @@ namespace SantaClauseConsoleApp
         {
             //creating the children
             DateTime date1 = new DateTime(2001, 11, 06);
-            Child child1 = new Child("Tudor", date1, BehaviorEnum.Good, "Crisan 16");
+            Child child1 = new Child("Tudor", date1, BehaviorEnum.Good, "Crisan 16","Baia Mare");
 
             DateTime date2 = new DateTime(2001, 8, 05);
-            Child child2 = new Child("Calin Pop", date2, BehaviorEnum.Bad, "Decembrie 21");
+            Child child2 = new Child("Calin Pop", date2, BehaviorEnum.Bad, "Decembrie 21","Cluj Napoca");
 
             DateTime date3 = new DateTime(1997, 03, 30);
-            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle");
+            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle","Vienna");
 
             //setting up presents
             Item present1 = new Item("Car");
@@ -63,15 +64,66 @@ namespace SantaClauseConsoleApp
         }
 
         static void Question2()
-        { //todo create data
-            DateTime date1 = new DateTime(2001, 11, 06);
-            Child child1 = new Child("Tudor", date1, BehaviorEnum.Good, "Crisan 16");
+        { 
+            DateTime date1 = new DateTime(2010, 12, 11);
+            Child child1 = new Child("Tudorel Pop", date1, BehaviorEnum.Good, "Scantei 25","Baia Mare");
 
-            DateTime date2 = new DateTime(2001, 8, 05);
-            Child child2 = new Child("Calin Pop", date2, BehaviorEnum.Bad, "Decembrie 21");
+            DateTime date2 = new DateTime(2013, 8, 05);
+            Child child2 = new Child("Dorel Paul", date2, BehaviorEnum.Bad, "Mihai Eminescu 25","Baia Mare");
 
             DateTime date3 = new DateTime(1997, 03, 30);
-            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle");
+            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle","Vienna");
+
+            //setting up presents
+            Item present1 = new Item("Car");
+            Item present2 = new Item("Sword");
+            Item present3 = new Item("Doll");
+            List<Item> presents1 = new List<Item>();
+            presents1.Add(present1);
+            presents1.Add(present2);
+            //first Letter
+            DateTime letterDate1 = new DateTime(2021, 12, 23);
+            Letter letter1 = new Letter(child1, letterDate1, presents1);
+            child1.Writer();
+            letter1.createFileLetter("Letter1.txt");
+            Console.WriteLine();
+            Console.WriteLine();
+            //setting up presents
+            List<Item> presents2 = new List<Item>();
+            presents2.Add(present2);
+            presents2.Add(present3);
+            //second letter 
+            DateTime dateLetter2 = new DateTime(2021, 12, 24);
+            Letter letter2 = new Letter(child2, dateLetter2, presents2);
+            child2.Writer();
+            letter2.createFileLetter("Letter2.txt");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //setting up presents
+            List<Item> presents3 = new List<Item>();
+            
+            presents3.Add(present1);
+            presents3.Add(present3);
+            //third letter
+            DateTime dateLetter3 = new DateTime(2021, 12, 21);
+            Letter letter3 = new Letter(child3, dateLetter3, presents3);
+            child3.Writer();
+            letter3.createFileLetter("Letter3.txt");
+        }
+
+        static void Question3()
+        {
+            
+            //creating the children
+            DateTime date1 = new DateTime(2001, 11, 06);
+            Child child1 = new Child("Tudor", date1, BehaviorEnum.Good, "Crisan 16","Baia Mare");
+
+            DateTime date2 = new DateTime(2001, 8, 05);
+            Child child2 = new Child("Calin Pop", date2, BehaviorEnum.Bad, "Decembrie 21","Cluj Napoca");
+
+            DateTime date3 = new DateTime(1997, 03, 30);
+            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle","Vienna");
 
             //setting up presents
             Item present1 = new Item("Car");
@@ -99,7 +151,6 @@ namespace SantaClauseConsoleApp
 
             //setting up presents
             List<Item> presents3 = new List<Item>();
-            
             presents3.Add(present1);
             presents3.Add(present3);
             //third letter
@@ -108,17 +159,16 @@ namespace SantaClauseConsoleApp
             letter3.createFileLetter("Letter3.txt");
         }
 
-        static void Question3()
-        {
-            ;
-        }
-
         static void Question4()
         {
+            Report report= Report.Instance; 
+            Console.WriteLine(report.reports.Count);
+            
         }
 
         static void Question5()
         {
+            //todo explain singleton
         }
 
         static void Question6()

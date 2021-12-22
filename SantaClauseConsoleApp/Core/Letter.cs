@@ -22,8 +22,9 @@ namespace SantaClauseConsoleApp
             this.presents = items;
             this.ID = Interlocked.Increment(ref globalId); // auto incermeted ID
         }
-
-        public void createTextLetter() // todo make the file work
+    
+        //For testing to see how the letter looks like
+        public void createTextLetter()
         {  
             StreamReader reader = new StreamReader("letter-template.txt");
             string line;
@@ -61,10 +62,12 @@ namespace SantaClauseConsoleApp
         //hopefully if the first works this works as well
         public void createFileLetter(String FileName)
         {
+            FileInfo fileInfo = new FileInfo(FileName);
             String FullLetter="";
             
             if(!File.Exists(FileName))
                 File.Create(FileName);
+            Console.WriteLine(fileInfo.FullName);
             StreamWriter writer = new StreamWriter(FileName);
             StreamReader reader = new StreamReader("letter-template.txt");
             string line;
@@ -72,7 +75,7 @@ namespace SantaClauseConsoleApp
             {
                 line = line.Replace("[FULL_NAME]", this.sender.name);
                 line = line.Replace("[AGE]", this.sender.calculateAge().ToString());
-                line = line.Replace("[ADRESS]", this.sender.adress);
+                line = line.Replace("[ADDRESS]", this.sender.adress);
                 line = line.Replace("[BEHAVIOR]", this.sender.isGood.ToString());
 
                 if (line.Contains("[PRESENT1]"))
@@ -84,10 +87,13 @@ namespace SantaClauseConsoleApp
                     }
                 }
 
-                FullLetter += line;
+                writer.WriteLine(line);
+                
+                
             }
             reader.Close();
-            writer.WriteLine(FullLetter);
+            writer.Close();
+            
         }
     }
 }
