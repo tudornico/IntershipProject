@@ -9,11 +9,11 @@ namespace SantaClauseConsoleApp
     {
         static void Main(string[] args)
         {
-            //Question1(); // works
+            Question1(); // works
             //Question2(); // works
-            //Question3(); works
-            Question4();
-            Question5();
+            //Question3(); //works
+            //Question4(); //works
+            //Question5(); //works
             Question6();
         }
 
@@ -152,7 +152,7 @@ namespace SantaClauseConsoleApp
             //setting up presents
             List<Item> presents3 = new List<Item>();
             presents3.Add(present1);
-            presents3.Add(present3);
+            presents3.Add(present2); //different from 2 we want to show the difference in amount so that the sorting works
             //third letter
             Letter letter3 = new Letter(child3, DateTime.Now, presents3);
             child3.Writer();
@@ -162,17 +162,21 @@ namespace SantaClauseConsoleApp
         static void Question4()
         {
             Report report= Report.Instance; 
-            Console.WriteLine(report.reports.Count);
+            report.writer();
             
         }
 
         static void Question5()
         {
-            //todo explain singleton
+            //Singelton design pattern can be implemented in the report class (view implementation of report)
+            // the core idea is that we don t want multiple reports and with this we can be sure that the information
+            //stocked in report is global and can be used from anywhere
         }
 
         static void Question6()
         {
+           
+            
         }
     }
 }

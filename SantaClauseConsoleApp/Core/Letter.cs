@@ -60,7 +60,7 @@ namespace SantaClauseConsoleApp
             }
         }
         //hopefully if the first works this works as well
-        public void createFileLetter(String FileName)
+        public void createFileLetter(String FileName) //todo create copy files or make the files in directory apply directly
         {
             FileInfo fileInfo = new FileInfo(FileName);
             String FullLetter="";

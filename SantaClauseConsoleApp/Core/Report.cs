@@ -10,14 +10,14 @@ namespace SantaClauseConsoleApp
     // from the files of each Child created as Letter + increment
     public sealed class Report
     {
-        public List<ToyReport> reports { get; set; }
+        public List<ToyReport> reports { get; set; } = new List<ToyReport>();
 
-        private static Report _instance= null;
+        private static Report _instance { get; set; }= null;
 
        
         //setting up the reports from the files we already have
         private Report()
-        {
+        {   
             int counter = 1;
             String line="";
             while (counter!=0)
@@ -28,18 +28,27 @@ namespace SantaClauseConsoleApp
                 {
                     StreamReader reader = new StreamReader(Filename);
                     line = "";
-                    Console.Write(fileInfo.Directory.FullName);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    while (string.IsNullOrEmpty(line = reader.ReadLine()))
+                 
+                    int flag = 0; // flag to know when the presents start
+                    while (!string.IsNullOrEmpty(line = reader.ReadLine())) 
                     {
-                        //todo all data from :
-                        line = line.Substring(line.LastIndexOf(':') + 1);
-                        List<String> presents = new List<string>(line.Split(','));
-                        foreach (String present in presents)
+                        if (line.Contains(':'))
                         {
-                            _instance.addToy(new Item(present));
+                            flag = 1;
                         }
+
+                        if (flag == 1)
+                        {
+                            line = reader.ReadLine();
+                            List<String> presents = new List<string>(line.Split(','));
+                            foreach (String present in presents)
+                            {  
+                               String newpresent = present.Replace(" ", "");
+                               if(!String.IsNullOrEmpty(newpresent))
+                                this.addToy(new Item(newpresent));
+                            }
+                        }
+                        
                     }
 
                 }
@@ -50,7 +59,6 @@ namespace SantaClauseConsoleApp
 
                 counter++;
             }
-            //this.reports = this.reports.OrderByDescending(o=>o.counter).ToList();
         }
 
         public static Report Instance
@@ -65,22 +73,31 @@ namespace SantaClauseConsoleApp
                 return _instance;
             }
         }
-        public bool addToy(Item toy)
+        private bool addToy(Item toy)
         {
             foreach (ToyReport toyreport in this.reports)
             {
-                if (toyreport.toy.Equals(toy))
+                if (toyreport.toy.name.Equals(toy.name))
                 {
                     toyreport.increment();
-                    _instance.reports = this.reports.OrderByDescending(o=>o.counter).ToList();
+                    this.reports =this.reports.OrderByDescending(o=>o.counter).ToList();
                     return true;
                 }
             }
 
             ToyReport newReport = new ToyReport(toy);
-            _instance.reports.Add(newReport);
-            _instance.reports= _instance.reports.OrderByDescending(o=>o.counter).ToList();
+            this.reports.Add(newReport);
+            this.reports= this.reports.OrderByDescending(o=>o.counter).ToList();
             return true;
+        }
+
+        public void writer()
+        {
+            foreach (ToyReport toyReport in _instance.reports)
+            {
+                Console.WriteLine("Toy is : "+toyReport.toy.name + " Amount is : " + toyReport.counter);
+                
+            }
         }
         
     }
