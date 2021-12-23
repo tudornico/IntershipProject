@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,11 +10,11 @@ namespace SantaClauseConsoleApp
         static void Main(string[] args)
         {
             Question1(); // works
-            //Question2(); // works
+            Question2(); // works
             //Question3(); //works
-            //Question4(); //works
+           // Question4(); //works
             //Question5(); //works
-            Question6();
+            //Question6(); //works
         }
 
         static void Question1()
@@ -171,11 +171,32 @@ namespace SantaClauseConsoleApp
             //Singelton design pattern can be implemented in the report class (view implementation of report)
             // the core idea is that we don t want multiple reports and with this we can be sure that the information
             //stocked in report is global and can be used from anywhere
+            
+            //Sigelton can also be used for Question 6 as we want all children ever created to be added to the repository
+            //so we make a singleton design pattern for the repository and we call the instance in the child constructor
         }
 
         static void Question6()
         {
-           
+            DateTime date1 = new DateTime(2001, 11, 06);
+            Child child1 = new Child("Tudor", date1, BehaviorEnum.Good, "Crisan 16","Baia Mare");
+
+            DateTime date2 = new DateTime(2001, 8, 05);
+            Child child2 = new Child("Calin Pop", date2, BehaviorEnum.Bad, "Decembrie 21","Cluj Napoca");
+
+            DateTime date3 = new DateTime(1997, 03, 30);
+            Child child3 = new Child("Andrei Nicolaescu", date3, BehaviorEnum.Good, "Qualle","Baia Mare");
+            
+            ChildRepository repoInstance = ChildRepository.Instace;
+            List<Child> childList =   repoInstance.groupByTown();
+            
+            
+
+            foreach (Child child in childList)
+            {
+                child.Writer();
+            }
+            
             
         }
     }
