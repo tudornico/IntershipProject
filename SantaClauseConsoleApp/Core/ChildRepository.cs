@@ -1,49 +1,48 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 
 namespace SantaClauseConsoleApp
 {
-    public  class ChildRepository : IObserver<Child>
+    public sealed class ChildRepository
     {
-        public List<Child> Children;
+        public  List<Child> Children { get; set; } 
+
+        private static ChildRepository _instace { get; set; } = null;
 
 
-
-        public ChildRepository()
+        private ChildRepository()
         {
             this.Children = new List<Child>();
         }
 
-       
+        public static ChildRepository Instace
+        {
+            get
+            {
+                if (_instace == null)
+                {
+                    _instace = new ChildRepository();
+                }
+
+                return _instace;
+            }
+        }
+
         public void addChild(Child child)
         {
-            this.Children.Add(child);
+            _instace.Children.Add(child);
         }
 
-        public void groupByTown()
+        public List<Child> groupByTown()
         {
-            var Query = this.Children.GroupBy(child => child.Town,
-                child => child.ID
-                );
-                
-            
+            List<Child> resultList = new List<Child>(); 
+            resultList = _instace.Children.OrderBy(c => c.Town).ThenBy(c=>c.adress).ToList();
+            return resultList;
         }
 
-        public void OnCompleted()
-        {
-            this.Children.Add();
-        }
-
-        public void OnError(Exception error)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnNext(Child value)
-        {
-            throw new NotImplementedException();
-        }
     }
+
 }
